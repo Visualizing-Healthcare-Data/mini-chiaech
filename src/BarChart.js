@@ -41,17 +41,10 @@ class BarChart extends React.Component {
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(xAxis))
-      // .selectAll("text")
-      //   .style("text-anchor", "middle")
-      //   .text("Temperature");
 
       svg.append("g")
         .attr("class", "y axis")
         .call(d3.axisLeft(yAxis))
-      // .append("text")
-      //   .attr("transform", "rotate(-90)" )
-      //   .style("text-anchor", "middle")
-      //   .text("Revenue");
 
       svg.selectAll("bar")
         .data(data)

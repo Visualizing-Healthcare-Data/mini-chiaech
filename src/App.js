@@ -17,7 +17,8 @@ class App extends Component {
     return (
       <div className="App">
         <BarChart data={this.state.data} width={this.state.width} height={this.state.height} />
-       <LineGraph data={this.state.data} width={this.state.width} height={this.state.height} />
+        <ScatterPlot data={this.state.data} width={this.state.width} height={this.state.height} />
+        <LineGraph data={this.state.data} width={this.state.width} height={this.state.height} />
       </div>
     );
   }

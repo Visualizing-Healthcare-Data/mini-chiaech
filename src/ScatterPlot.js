@@ -21,21 +21,22 @@ class ScatterPlot extends React.Component {
     d3.csv(IceCreamTest).then((data) => {
       console.log(data);
 
-      // const xScale = scaleLinear()
-      //   .domain(extent(data, d => d.x))
-      //   .range([0, width]);
-      //
-      // const yScale = scaleLinear()
-      //   .domain(extent(data, d => d.y))
-      //   .range([height, 0]);
+      const xAxis = d3.scaleBand()
+        .rangeRound([0, width])
+        .padding(0.1)
 
-      var svg = d3.select("#my_dataviz")
+      const yAxis = d3.scaleLinear()
+        .rangeRound([height, 0]);
+
+      xAxis.domain(data.map(function(d) { return d.Temperature; }));
+      yAxis.domain([0, d3.max(data, function(d) { return d.Revenue; })]);
+
+      var svg = d3.select("body")
         .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
+        .attr("width", this.props.width)
+        .attr("height", this.props.height)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 
       // Add X axis
       var x = d3.scaleLinear()
@@ -43,17 +44,17 @@ class ScatterPlot extends React.Component {
         .range([ 0, width ]);
       svg.append("g")
         .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(xAxis));
 
       // Add Y axis
       var y = d3.scaleLinear()
         .domain([0, 500000])
         .range([ height, 0]);
       svg.append("g")
-        .call(d3.axisLeft(y));
+        .call(d3.axisLeft(yAxis));
 
-        x.domain(d3.extent(data, function(d) { return d.Temperature; }));
-        y.domain([0, d3.max(data, function(d) { return d.Revenue; })]);
+        xAxis.domain(data.map(function(d) { return d.Temperature; }));
+        yAxis.domain([0, d3.max(data, function(d) { return d.Revenue; })]);
 
       // Add dots
       svg.append('g')
@@ -61,12 +62,11 @@ class ScatterPlot extends React.Component {
         .data(data)
         .enter()
         .append("circle")
-          .attr("cx", function (d) { return x(d.Temperature); } )
-          .attr("cy", function (d) { return y(d.Revenue); } )
+          .attr("cx", function (d) { return xAxis(d.Temperature); } )
+          .attr("cy", function (d) { return yAxis(d.Revenue); } )
           .attr("r", 5)
           .style("fill", "steelblue")
-})
-
+    });
   }
 
   render(){

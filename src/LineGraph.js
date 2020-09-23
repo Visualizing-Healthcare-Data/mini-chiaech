@@ -39,14 +39,24 @@ class LineGraph extends React.Component {
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
 
-      x.domain(d3.extent(data, function(d) { return d.Temperature; }));
+      x.domain(data.map(function(d) { return d.Temperature; }));
       y.domain([0, d3.max(data, function(d) { return d.Revenue; })]);
+
+      svg.append("g")
+        .attr("class", "x axis")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+
+      svg.append("g")
+        .attr("class", "y axis")
+        .call(d3.axisLeft(y))
 
       // Add the valueline path.
       svg.append("path")
           .data([data])
           .attr("class", "line")
           .attr("stroke-width", 2)
+          .style("fill", "none")
           .style("stroke", "steelblue")
           .attr("d", valueline);
 

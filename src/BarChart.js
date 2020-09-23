@@ -41,17 +41,17 @@ class BarChart extends React.Component {
         .attr("class", "x axis")
         .attr("transform", "translate(0," + height + ")")
         .call(d3.axisBottom(xAxis))
-      .selectAll("text")
-        .style("text-anchor", "middle")
-        .text("Temperature");
+      // .selectAll("text")
+      //   .style("text-anchor", "middle")
+      //   .text("Temperature");
 
       svg.append("g")
         .attr("class", "y axis")
         .call(d3.axisLeft(yAxis))
-      .append("text")
-        .attr("transform", "rotate(-90)" )
-        .style("text-anchor", "middle")
-        .text("Revenue");
+      // .append("text")
+      //   .attr("transform", "rotate(-90)" )
+      //   .style("text-anchor", "middle")
+      //   .text("Revenue");
 
       svg.selectAll("bar")
         .data(data)
@@ -62,8 +62,8 @@ class BarChart extends React.Component {
         .attr("width", xAxis.bandwidth())
         .attr("y", function(d) { return yAxis(d.Revenue); })
         .attr("height", function(d) { return height - yAxis(d.Revenue); })
-        // .attr("fill", function(d) {
-        //   return "rgb(0, 0, " + Math.round((d.out_temperature * 155)+100) + ")"; })
+        .attr("fill", function(d) {
+          return "rgb(0, 0, " + Math.round((d.out_temperature * 155)+100) + ")"; })
     });
   }
 

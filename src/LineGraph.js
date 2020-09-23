@@ -4,7 +4,7 @@ import IceCreamTest from './IceCreamTest.csv';
 
 class LineGraph extends React.Component {
   componentDidMount() {
-    this.drawChart();
+    this.drawChart();  
   }
 
   drawChart() {

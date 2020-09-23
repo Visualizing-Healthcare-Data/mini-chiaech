@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.5f361e03.chunk.css",
-    "main.js": "/static/js/main.b5c3eecf.chunk.js",
-    "main.js.map": "/static/js/main.b5c3eecf.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.238e75c2.js",
-    "runtime-main.js.map": "/static/js/runtime-main.238e75c2.js.map",
-    "static/js/2.105da0df.chunk.js": "/static/js/2.105da0df.chunk.js",
-    "static/js/2.105da0df.chunk.js.map": "/static/js/2.105da0df.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.ee61e6feef68a442af5005e5144ae53c.js": "/precache-manifest.ee61e6feef68a442af5005e5144ae53c.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.5f361e03.chunk.css.map": "/static/css/main.5f361e03.chunk.css.map",
-    "static/js/2.105da0df.chunk.js.LICENSE.txt": "/static/js/2.105da0df.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "main.css": "/mini-chiaech/static/css/main.5f361e03.chunk.css",
+    "main.js": "/mini-chiaech/static/js/main.5f1259cf.chunk.js",
+    "main.js.map": "/mini-chiaech/static/js/main.5f1259cf.chunk.js.map",
+    "runtime-main.js": "/mini-chiaech/static/js/runtime-main.7a9213d1.js",
+    "runtime-main.js.map": "/mini-chiaech/static/js/runtime-main.7a9213d1.js.map",
+    "static/js/2.f27e16f8.chunk.js": "/mini-chiaech/static/js/2.f27e16f8.chunk.js",
+    "static/js/2.f27e16f8.chunk.js.map": "/mini-chiaech/static/js/2.f27e16f8.chunk.js.map",
+    "index.html": "/mini-chiaech/index.html",
+    "precache-manifest.c22d7dce704a7fb000bcf2e9df19e617.js": "/mini-chiaech/precache-manifest.c22d7dce704a7fb000bcf2e9df19e617.js",
+    "service-worker.js": "/mini-chiaech/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/mini-chiaech/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.f27e16f8.chunk.js.LICENSE.txt": "/mini-chiaech/static/js/2.f27e16f8.chunk.js.LICENSE.txt",
+    "static/media/IceCreamTest.csv": "/mini-chiaech/static/media/IceCreamTest.88c26726.csv",
+    "static/media/logo.svg": "/mini-chiaech/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.238e75c2.js",
-    "static/js/2.105da0df.chunk.js",
+    "static/js/runtime-main.7a9213d1.js",
+    "static/js/2.f27e16f8.chunk.js",
     "static/css/main.5f361e03.chunk.css",
-    "static/js/main.b5c3eecf.chunk.js"
+    "static/js/main.5f1259cf.chunk.js"
   ]
 }
